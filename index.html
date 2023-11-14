@@ -2,13 +2,104 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyKpKGoG7uFZt3Ic8JK9tNpv1+8OrhL3gy" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/styles.css">
-    <title>Formulario</title>
+    <title>Styled Responsive Form</title>
+    <style>
+        body {
+            background-color: #343a40;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+        }
+        .container {
+            background-color: #454d55;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        label {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #007bff; /* Bootstrap primary color */
+        }
+        input, select, textarea {
+            font-size: 1.1em;
+            width: 100%; /* Make inputs 100% wide */
+            background-color: #495057;
+            color: #fff;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        input:focus, select:focus, textarea:focus {
+            background-color: #6c757d;
+            color: #fff;
+        }
+        button {
+            margin-top: 20px;
+            font-size: 1.5em; /* Increased font size */
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px; /* Rounded corners */
+            padding: 10px 20px; /* Increased padding */
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3; /* Slightly darker shade on hover */
+        }
+    </style>
 </head>
 <body>
-    
 
-    <script src="js/main.js"></script>
+<div class="container mt-5">
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="apellido">Apellido</label>
+                <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="correo">Correo Electrónico</label>
+                <input type="email" class="form-control" id="correo" placeholder="Correo Electrónico">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="pais">País</label>
+                <input type="text" class="form-control" id="pais" placeholder="País">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="ocupacion">Ocupación</label>
+                <input type="text" class="form-control" id="ocupacion" placeholder="Ocupación">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="descripcion">Descripción</label>
+                <textarea class="form-control" id="descripcion" rows="3" placeholder="Descripción"></textarea>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyKpKGoG7uFZt3Ic8JK9tNpv1+8OrhL3gy" crossorigin="anonymous"></script>
+
+<script src="js/main.js"></script>
 </body>
 </html>
