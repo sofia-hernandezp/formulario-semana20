@@ -21,9 +21,9 @@ app.get("/", (req, res) => {
 app.get("/datos", async (req, res) => {
   let conn;
   try {
-    conn = await n;
+    conn = await pool.getConnection();
     const rows = await conn.query(
-      "SELECT id, name, lastname, email FROM people"
+      "SELECT id, name, lastname, email, country, occupation, description FROM datos"
     );
 
     res.json(rows);
@@ -39,7 +39,7 @@ app.get("/datos/:id", async (req, res) => {
   try {
     conn = await pool.getConnection();
     const rows = await conn.query(
-      "SELECT id, name, lastname, email FROM people WHERE id=?",
+      "SELECT id, name, lastname, email, country, occupation, description FROM datos WHERE id=?",
       [req.params.id]
     );
 
@@ -56,8 +56,8 @@ app.post("/datos", async (req, res) => {
   try {
     conn = await pool.getConnection();
     const response = await conn.query(
-      `INSERT INTO people(name, lastname, email) VALUE(?, ?, ?)`,
-      [req.body.name, req.body.lastname, req.body.email]
+      `INSERT INTO people(name, lastname, email, country, occupation, description) VALUE(?, ?, ?, ?, ?, ?)`,
+      [req.body.name, req.body.lastname, req.body.email, req.body.country, req.body.occupation, req.body.description]
     );
 
     res.json({ id: parseInt(response.insertId), ...req.body });
@@ -74,8 +74,8 @@ app.put("/datos/:id", async (req, res) => {
   try {
     conn = await pool.getConnection();
     const response = await conn.query(
-      `UPDATE people SET name=?, lastname=?, email=? WHERE id=?`,
-      [req.body.name, req.body.lastname, req.body.email, req.params.id]
+      `UPDATE datos SET name=?, lastname=?, email=? country=?, occupation=?, description=? WHERE id=?`,
+      [req.body.name, req.body.lastname, req.body.email, req.body.country, req.body.occupation, req.body.description, req.params.id]
     );
 
     res.json({ id: req.params.id, ...req.body });
@@ -91,7 +91,7 @@ app.delete("/datos/:id", async (req, res) => {
   let conn;
   try {
     conn = await pool.getConnection();
-    const rows = await conn.query("DELETE FROM people WHERE id=?", [
+    const rows = await conn.query("DELETE FROM datos WHERE id=?", [
       req.params.id,
     ]);
     res.json({ message: "Elemento eliminado correctamente" });
