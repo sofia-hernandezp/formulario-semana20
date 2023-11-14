@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyKpKGoG7uFZt3Ic8JK9tNpv1+8OrhL3gy" crossorigin="anonymous">
-    <title>FORMULARIO CON MARIA DB</title>
+    <title>Styled Responsive Form</title>
     <style>
         body {
-            background-color: #f8f9fa;
+            background-color: #343a40;
             font-family: 'Arial', sans-serif;
-            color: #333;
+            color: #fff;
         }
         .container {
-            background-color: #ffffff;
+            background-color: #454d55;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            color: #fff;
         }
         form {
             max-width: 600px;
@@ -28,14 +29,28 @@
         }
         input, select, textarea {
             font-size: 1.1em;
+            width: 100%; /* Make inputs 100% wide */
+            background-color: #495057;
+            color: #fff;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        input:focus, select:focus, textarea:focus {
+            background-color: #6c757d;
+            color: #fff;
         }
         button {
             margin-top: 20px;
-            font-size: 1.2em;
+            font-size: 1.5em; /* Increased font size */
             background-color: #007bff;
             color: #fff;
             border: none;
             cursor: pointer;
+            border-radius: 10px; /* Rounded corners */
+            padding: 10px 20px; /* Increased padding */
+            transition: background-color 0.3s;
         }
         button:hover {
             background-color: #0056b3; /* Slightly darker shade on hover */
