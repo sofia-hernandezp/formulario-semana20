@@ -56,7 +56,7 @@ app.post("/datos", async (req, res) => {
   try {
     conn = await pool.getConnection();
     const response = await conn.query(
-      `INSERT INTO people(name, lastname, email, country, occupation, description) VALUE(?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO datos(name, lastname, email, country, occupation, description) VALUE(?, ?, ?, ?, ?, ?)`,
       [req.body.name, req.body.lastname, req.body.email, req.body.country, req.body.occupation, req.body.description]
     );
 
