@@ -14,19 +14,21 @@ const port = 3000;
 
 app.use(express.json());
 
-app.post("/enviar-datos", async (req, res) => {
+app.post('/', async (req, res, next) => {
+  console.log(req)
   const {name, lastname, email, country, occupation, description} = req.body
-
-  if (!name || !lastname || !email || !country || !occupation || !description) {
+  console.log(name, lastname, email, country, occupation, description)
+    if (!name || !lastname || !email || !country || !occupation || !description) {
     console.log(req.body)
-    return res.status(400).json({ message: "Todos los campos son obligatorios." });
+    return res.status(400).json({ message: "Todos los campos son obligatorios."});
   }
+  
   let conn;
   try {
     conn = await pool.getConnection();
     const response = await conn.query(
       `INSERT INTO datos (name, lastname, email, country, occupation, description) VALUES(?, ?, ?, ?, ?, ?)`,
-      [req.body.name, req.body.lastname, req.body.email, req.body.country, req.body.occupation, req.body.description]
+      [name, lastname, email, country, occupation, description]
     );
 
       console.log("Datos agregados")
