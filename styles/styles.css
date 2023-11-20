@@ -1,0 +1,50 @@
+body {
+    background-color: #343a40;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+#contenedor-form {
+    width: 65%;
+    background-color: #454d55;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+form {
+    max-width: 100%;
+    margin: 0 auto;
+}
+label {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: rgb(47, 215, 218); /* Bootstrap primary color */
+}
+input, select, textarea {
+    font-size: 1.1em;
+    width: 100%; /* Make inputs 100% wide */
+    background-color: #495057;
+    color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+input:focus, select:focus, textarea:focus {
+    background-color: #6c757d;
+    color: #fff;
+}
+button {
+    margin-top: 20px;
+    font-size: 1.5em; /* Increased font size */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px 20px; /* Increased padding */
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #0056b3; /* Slightly darker shade on hover */
+}
