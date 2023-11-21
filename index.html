@@ -50,7 +50,7 @@
     </div>
 
 <div class="container mt-4" id="contenedor-form">
-        <form method="POST" action="http://localhost:3000">
+        <form  method="POST action="#">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="nombre">Nombre</label>
@@ -68,7 +68,7 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label for="pais">País</label>
-                    <select name="country">
+                    <select id="pais" name="country">
                         <option value="AF">Afganistán</option>
                         <option value="AL">Albania</option>
                         <option value="DE">Alemania</option>
@@ -317,7 +317,7 @@
                     <textarea id="descripcion" rows="3" name="description" placeholder="Descripción"></textarea>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" id="submitBtn" class="btn btn-primary">Enviar</button>
         </form>
 </div>
 

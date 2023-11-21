@@ -1,10 +1,11 @@
 const express = require("express");
 const mariadb = require("mariadb");
+const cors = require("cors")
 
 const pool = mariadb.createPool({
   host: "localhost",
   user: "root",
-  password: "1234",
+  password: "",
   database: "formulario",
   connectionLimit: 5,
 });
@@ -14,12 +15,14 @@ const port = 3000;
 
 app.use(express.json());
 
-app.post('/', async (req, res, next) => {
-  console.log(req)
+app.use(cors())
+
+app.post('/', async (req, res) => {
+  //console.log(req)
   const {name, lastname, email, country, occupation, description} = req.body
   console.log(name, lastname, email, country, occupation, description)
     if (!name || !lastname || !email || !country || !occupation || !description) {
-    console.log(req.body)
+    //console.log(req.body)
     return res.status(400).json({ message: "Todos los campos son obligatorios."});
   }
   
